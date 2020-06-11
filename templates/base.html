@@ -1,10 +1,14 @@
-{% extends 'bootstrap/base.html' %}
-{% block styles -%}
-{{super()}}
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-{% endblock styles %}
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="{{url_for('static',filename='bootstrap.min.css')}}">
+  {{ moment.include_jquery() }}
+  {{moment.include_moment()}}
+  {{ moment.locale('ru') }}
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
    {% block navbar %}
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -39,7 +43,6 @@
 </nav>
     {% endblock %}
 
-   {% block content %}
 
 
 <div class="container">
@@ -50,5 +53,15 @@
 
 </div>
 </div>
+<div class="container">
+
+   {% block content %}
     {% endblock %}
+</div>
+
+</body>
+</html>
+
+
+
 
