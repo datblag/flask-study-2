@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+
+
+
+{% block header %}
+
+Hi, {{page_header}}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="alert alert-dark" role="alert">
+<a href="{{url_for('index')}}"> На главную </a>
+</div>
+
+{% endblock %}

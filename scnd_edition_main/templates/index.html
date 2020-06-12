@@ -1,11 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
+{%if name%}
 <div class="alert alert-dark" role="alert">
-<a href="{{url_for('user', username='123')}}">User 123</a>
+<a href="{{url_for('user', username=name)}}">{{name}}</a>
 </div>
+<div class="alert alert-dark" role="alert">
+<a href="{{url_for('logout')}}">Выход</a>
+</div>
+{%endif%}
 <div class="alert alert-dark" role="alert">
 {{moment(current_time).format('LLL')}}
 </div>
+
+<form method="POST">
+    {{ form.hidden_tag() }}
+
+ <div class="form-group">
+    {{ form.name.label }}
+    {{ form.name(id='my-text-field', class='form-control', placeholder="Ваше имя?") }}
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
 
 {% endblock %}
 

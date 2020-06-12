@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+
+{% block content%}
+<div class="alert alert-dark" role="alert">
+{{moment(current_time).format('LLL')}}
+</div>
+{%if name%}
+<div class="alert alert-dark" role="alert">
+<a href="{{url_for('user', username=name)}}">    {{name}} </a>
+</div>
+ {%endif%}
+<form method="POST">
+{{ form.hidden_tag() }}
+  <div class="form-group">
+    {{form.name.label}}
+    {{form.name(id="formGroupExampleInput", class="form-control",  placeholder="Ваше имя?")}}
+  </div>
+    {{form.submit(class="btn btn-primary")}}
+
+</form>
+{% endblock%}

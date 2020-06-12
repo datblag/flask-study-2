@@ -1,2 +1,10 @@
 {% extends 'base.html' %}
 {% block pageheader %}Hi, {{ user }}{% endblock %}
+   {% block content %}
+<div class="alert alert-dark" role="alert">
+<a href="{{url_for('index')}}">На главную</a>
+</div>
+
+{% for message in get_flashed_messages() %}    <div class="alert alert-warning">        <button type="button" class="close" data-dismiss="alert">&times;</button>        {{ message }}    </div>    {% endfor %}
+    {% endblock %}
+

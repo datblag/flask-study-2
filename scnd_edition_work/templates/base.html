@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="{{url_for('static',filename='bootstrap.min.css')}}">
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  {{ moment.include_jquery() }}
-  {{moment.include_moment()}}
-  {{ moment.locale('ru') }}
     <meta charset="UTF-8">
+<link rel="stylesheet" href="{{url_for('static', filename='bootstrap.min.css')}}" >
+    {{ moment.include_jquery() }}
+    {{moment.include_moment()}}
+    {{moment.locale('RU')}}
+
     <title>My application</title>
 </head>
 <body>
-   {% block navbar %}
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
@@ -44,28 +45,15 @@
     </form>
   </div>
 </nav>
-    {% endblock %}
-
-
-
 <div class="container">
 
-    <div class="page-header">
 
-    <h1>{% block pageheader %} {{page_header}}{% endblock %}</h1>
+<div class="page-header">   <h1> {% block header%} {{page_header}} {% endblock %}</h1> </div>
 
-  </div>
 </div>
-
 <div class="container">
-
-   {% block content %}
-    {% endblock %}
+{% block content%}
+{% endblock %}
 </div>
-
 </body>
 </html>
-
-
-
-
