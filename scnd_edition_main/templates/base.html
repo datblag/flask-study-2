@@ -6,7 +6,7 @@
   {{moment.include_moment()}}
   {{ moment.locale('ru') }}
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>My application</title>
 </head>
 <body>
    {% block navbar %}
@@ -51,8 +51,9 @@
 
     <h1>{% block pageheader %} {{page_header}}{% endblock %}</h1>
 
+  </div>
 </div>
-</div>
+
 <div class="container">
 
    {% block content %}
